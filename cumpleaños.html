@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #30D5C8;
+            background-image: url('https://www.funimada.com/assets/images/cards/big/bday-907.gif'), 
+                              url('https://www.funimada.com/assets/images/cards/big/bday-907.gif'), 
+                              url('https://www.gifsanimados.org/data/media/492/fuegos-artificiales-imagen-animada-0051.gif'),
+                              url('https://www.gifsanimados.org/data/media/492/fuegos-artificiales-imagen-animada-0051.gif'),
+                              url('https://www.gifsanimados.org/data/media/492/fuegos-artificiales-imagen-animada-0012.gif'),
+                              url('https://www.gifsanimados.org/data/media/492/fuegos-artificiales-imagen-animada-0012.gif');
+
+            background-position: 10% 50%, 
+                                 90% 50%,
+                                 6% 20%,
+                                 94% 20%,
+                                 15% 20%,
+                                 85% 20%;
+            background-repeat: no-repeat;
+            background-size: 10% 20%; /* Ajusta el tamaño del GIF según sea necesario */
+        }
+        .carousel {
+            width: 100%;
+            max-width: 900px;
+            height: 100%;
+            max-height: 900px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 25px;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            flex: 0 0 100%;
+        }
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff6666;
+            font-size: 3em;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #666666;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #ff6666;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background-color: #ff3333;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="carousel">
+        <div class="carousel-track">
+            <img src="9D6BCD69-587F-4C87-88A2-CB3421ADC847.JPEG" alt="Feliz Cumpleaños 1">
+            <img src="B5788436-BA23-4E16-8280-6502123775D4.JPG" alt="Feliz Cumpleaños 2">
+            <img src="IMG_5572.JPEG" alt="Feliz Cumpleaños 3">
+            <img src="IMG_3414.jpg" alt="Feliz Cumpleaños 4">
+            <img src="IMG_2983.jpg" alt="Feliz Cumpleaños 3">
+            <img src="IMG_2808.jpg" alt="Feliz Cumpleaños 3">
+            <img src="IMG_3142.jpg" alt="Feliz Cumpleaños 3">
+            <img src="IMG_3056.jpg" alt="Feliz Cumpleaños 3">
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>¡Feliz Cumpleaños!</h1>
+        <p>Te amo infinito&#128525, espero que sea un gran año y se te cumpla todo bb&#128147, saludos de tu bb y tu hija gatuna&#128049&#128147</p>
+        <button onclick="playSong()">🎉 Reproducir Canción 🎶</button>
+    </div>
+
+    <audio id="birthdaySong">
+        <source src="y2mate.com - Happy Birthday Song.mp3" type="audio/mpeg">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+
+    <script>
+        function playSong() {
+            var song = document.getElementById("birthdaySong");
+            song.play();
+        }
+
+        let currentIndex = 0;
+        const track = document.querySelector('.carousel-track');
+        const images = document.querySelectorAll('.carousel img');
+
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            const offset = -currentIndex * 100;
+            track.style.transform = `translateX(${offset}%)`;
+        }
+
+        setInterval(showNextImage, 3000); // Cambia la imagen cada 3 segundos
+    </script>
+</body>
+</html>
+
+
+
+
+
+
